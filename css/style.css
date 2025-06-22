@@ -1,0 +1,321 @@
+/* Reset */
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+/* Body */
+body {
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  line-height: 1.6;
+  color: black;
+  background-color: #ffffff;
+}
+
+/* Navbar */
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background: #ffffff;
+  padding: 14px 30px;
+  border-bottom: 3px solid #0072bc;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.06);
+}
+
+.navbar .logo img {
+  height: 48px;
+}
+
+.navbar nav ul {
+  list-style: none;
+  display: flex;
+  gap: 22px;
+}
+
+.navbar nav ul li a {
+  color: #0072bc;
+  text-decoration: none;
+  font-size: 1rem;
+  padding-bottom: 2px;
+  border-bottom: 2px solid transparent;
+  transition: all 0.3s ease;
+}
+
+.navbar nav ul li a:hover,
+.navbar nav ul li a.active {
+  border-bottom: 2px solid #3aaa35;
+  color: #3aaa35;
+}
+
+/* Hero Section */
+.hero {
+  background: linear-gradient(135deg, #0072bc, #3aaa35);
+  color: white;
+  text-align: center;
+  padding: 80px 20px;
+}
+
+.hero h1 {
+  font-size: 2.8rem;
+  margin-bottom: 15px;
+}
+
+.hero p {
+  font-size: 1.2rem;
+  margin-bottom: 25px;
+}
+
+.hero-button {
+  background-color: #0072bc;
+  color: black;
+  border: 2px solid #0072bc;
+  padding: 10px 24px;
+  border-radius: 30px;
+  font-weight: bold;
+  text-decoration: none;
+  transition: all 0.3s ease;
+}
+
+.hero-button:hover {
+  background-color: #3aaa35;
+  color: black;
+  border-color: #3aaa35;
+}
+
+/* Section General */
+section {
+  padding: 50px 20px;
+}
+
+.section-light {
+  background-color: #f4f6f8;
+}
+
+.section-dark {
+  background-color: #e8f5e9;
+}
+
+section h2 {
+  text-align: center;
+  font-size: 2rem;
+  margin-bottom: 25px;
+  color: #0072bc;
+}
+
+section p {
+  max-width: 960px;
+  margin: 0 auto 15px;
+  font-size: 1rem;
+  line-height: 1.7;
+}
+
+/* Featured Products */
+.featured-products {
+  text-align: center;
+}
+
+.product-grid {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 24px;
+  margin-top: 30px;
+}
+
+.product-card {
+  width: 250px;
+  background-color: #ffffff;
+  border: 2px solid #0072bc;
+  border-radius: 12px;
+  padding: 20px 12px;
+  box-shadow: 0 5px 12px rgba(0, 0, 0, 0.08);
+  transition: transform 0.3s;
+  text-align: center;
+
+  /* Maintain layout without fixed height */
+  display: flex;
+  flex-direction: column;
+}
+
+.product-card:hover {
+  transform: translateY(-8px);
+  border-color: #3aaa35;
+}
+
+.product-card img {
+  width: 150px;
+  height: 150px;
+  object-fit: contain;
+  background: #f0f0f0;
+  padding: 10px;
+  border-radius: 10px;
+  margin-bottom: 12px;
+}
+
+.product-card h3 {
+  font-size: 1.05rem;
+  margin-bottom: 10px;
+  color: #0072bc;
+}
+
+.product-card p {
+  font-size: 0.9rem;
+  margin-bottom: 12px;
+  color: #444;
+  flex-grow: 1; /* Fills vertical space to push button down */
+}
+
+.enquiry-button {
+  display: inline-block;
+  background-color: #0072bc;
+  color: white;
+  padding: 10px 15px;
+  border-radius: 5px;
+  text-decoration: none;
+  font-weight: bold;
+  transition: background-color 0.3s ease;
+  margin-top: auto; /* Keeps button at the bottom */
+}
+
+.enquiry-button:hover {
+  background-color: #3aaa35;
+}
+
+/* Footer */
+footer {
+  background: linear-gradient(135deg, #0072bc, #3aaa35);
+  color: black;
+  padding: 30px 15px 20px;
+  font-size: 14px;
+  border-top: none;
+}
+footer a {
+  color: white !important; 
+  text-decoration: none;
+}
+footer a:hover {
+  text-decoration: underline;
+}
+/* Category Buttons */
+.category-button {
+  display: block;
+  width: 100%;
+  background-color: #0072bc;
+  color: white;
+  padding: 10px;
+  border: none;
+  font-size: 16px;
+  cursor: pointer;
+  margin-bottom: 6px;
+  border-radius: 6px;
+  text-align: left;
+  transition: background-color 0.3s;
+}
+
+.category-button:hover {
+  background-color: #3aaa35;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .navbar nav ul {
+    flex-direction: column;
+    align-items: flex-end;
+    gap: 10px;
+    margin-top: 10px;
+  }
+
+  .hero h1 {
+    font-size: 2rem;
+  }
+
+  .product-grid {
+    flex-direction: column;
+    align-items: center;
+  }
+}
+
+/* Animations */
+.fade-in {
+  opacity: 0;
+  animation: fadeIn 0.8s ease-in forwards;
+}
+.slide-up {
+  opacity: 0;
+  transform: translateY(20px);
+  animation: slideUp 0.6s ease-out forwards;
+}
+.delay-1 { animation-delay: 0.1s; }
+.delay-2 { animation-delay: 0.2s; }
+.delay-3 { animation-delay: 0.3s; }
+
+@keyframes fadeIn {
+  to { opacity: 1; }
+}
+@keyframes slideUp {
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+/* Add to existing CSS or append at the end */
+
+/* Sticky Navbar */
+.navbar {
+  position: sticky;
+  top: 0;
+  z-index: 999;
+  background: #ffffff;
+  transition: all 0.3s ease;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.05);
+}
+
+/* WhatsApp Floating Button */
+.whatsapp-float {
+  position: fixed;
+  bottom: 22px;
+  right: 22px;
+  background-color: #25D366;
+  color: white;
+  border-radius: 50%;
+  width: 58px;
+  height: 58px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+  z-index: 1000;
+  transition: transform 0.3s ease;
+}
+.whatsapp-float:hover {
+  transform: scale(1.1);
+}
+.whatsapp-float img {
+  width: 30px;
+  height: 30px;
+}
+
+/* Section Background Gradients */
+.section-light {
+  background: linear-gradient(to right, #f9f9f9, #ffffff);
+}
+.section-dark {
+  background: linear-gradient(to right, #e0f7fa, #ffffff);
+}
+
+/* Button Animation */
+.hero-button,
+.enquiry-button {
+  transition: transform 0.3s ease, background-color 0.3s ease;
+}
+.hero-button:hover,
+.enquiry-button:hover {
+  transform: translateY(-2px) scale(1.05);
+}
+
+/* Smooth Scrolling */
+html {
+  scroll-behavior: smooth;
+}
